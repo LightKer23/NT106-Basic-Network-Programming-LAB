@@ -31,6 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FindMaxMinForm));
             btnFind = new Button();
             groupBox2 = new GroupBox();
+            lblMin = new Label();
+            lblMax = new Label();
             label5 = new Label();
             label4 = new Label();
             groupBox1 = new GroupBox();
@@ -59,9 +61,12 @@
             btnFind.TabIndex = 7;
             btnFind.Text = "Tìm";
             btnFind.UseVisualStyleBackColor = false;
+            btnFind.Click += btnFind_Click;
             // 
             // groupBox2
             // 
+            groupBox2.Controls.Add(lblMin);
+            groupBox2.Controls.Add(lblMax);
             groupBox2.Controls.Add(label5);
             groupBox2.Controls.Add(label4);
             groupBox2.Font = new Font("Tahoma", 9F);
@@ -72,6 +77,21 @@
             groupBox2.TabStop = false;
             groupBox2.Text = "Kết quả:";
             groupBox2.Enter += groupBox2_Enter;
+            // 
+            // lblMin
+            // 
+            lblMin.Location = new Point(142, 54);
+            lblMin.Name = "lblMin";
+            lblMin.Size = new Size(168, 25);
+            lblMin.TabIndex = 13;
+            // 
+            // lblMax
+            // 
+            lblMax.Location = new Point(142, 28);
+            lblMax.Name = "lblMax";
+            lblMax.Size = new Size(168, 25);
+            lblMax.TabIndex = 12;
+            lblMax.Click += label7_Click;
             // 
             // label5
             // 
@@ -113,6 +133,7 @@
             txtNumber3.Name = "txtNumber3";
             txtNumber3.Size = new Size(180, 26);
             txtNumber3.TabIndex = 5;
+            txtNumber3.KeyPress += txtNumber3_KeyPress;
             // 
             // label3
             // 
@@ -130,6 +151,7 @@
             txtNumber2.Size = new Size(180, 26);
             txtNumber2.TabIndex = 3;
             txtNumber2.TextChanged += txtNumber2_TextChanged;
+            txtNumber2.KeyPress += txtNumber2_KeyPress;
             // 
             // txtNumber1
             // 
@@ -137,6 +159,7 @@
             txtNumber1.Name = "txtNumber1";
             txtNumber1.Size = new Size(180, 26);
             txtNumber1.TabIndex = 1;
+            txtNumber1.KeyPress += txtNumber1_KeyPress;
             // 
             // label2
             // 
@@ -168,6 +191,7 @@
             btnExit.TabIndex = 8;
             btnExit.Text = "Thoát";
             btnExit.UseVisualStyleBackColor = false;
+            btnExit.Click += btnExit_Click;
             // 
             // btnDel
             // 
@@ -181,6 +205,7 @@
             btnDel.TabIndex = 9;
             btnDel.Text = "Xóa";
             btnDel.UseVisualStyleBackColor = false;
+            btnDel.Click += btnDel_Click;
             // 
             // label6
             // 
@@ -231,5 +256,7 @@
         private Button btnExit;
         private Button btnDel;
         private Label label6;
+        private Label lblMax;
+        private Label lblMin;
     }
 }

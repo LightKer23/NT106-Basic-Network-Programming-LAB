@@ -29,32 +29,26 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WhatToEatTodayForm));
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
+            txtInput = new TextBox();
             label1 = new Label();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
-            button4 = new Button();
+            btnAdd = new Button();
+            btnFind = new Button();
+            btnDel = new Button();
+            btnExit = new Button();
             groupBox1 = new GroupBox();
+            lblOuput = new Label();
             label4 = new Label();
+            lstDishes = new ListBox();
+            groupBox1.SuspendLayout();
             SuspendLayout();
             // 
-            // textBox1
+            // txtInput
             // 
-            textBox1.Location = new Point(28, 86);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(361, 253);
-            textBox1.TabIndex = 0;
-            textBox1.TextChanged += textBox1_TextChanged;
-            // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(136, 33);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(253, 27);
-            textBox2.TabIndex = 1;
+            txtInput.Location = new Point(136, 33);
+            txtInput.Name = "txtInput";
+            txtInput.Size = new Size(253, 27);
+            txtInput.TabIndex = 1;
+            txtInput.TextChanged += txtInput_TextChanged;
             // 
             // label1
             // 
@@ -66,60 +60,65 @@
             label1.TabIndex = 2;
             label1.Text = "Nhập món ăn:";
             // 
-            // button1
+            // btnAdd
             // 
-            button1.BackColor = SystemColors.ButtonHighlight;
-            button1.FlatAppearance.BorderColor = SystemColors.ActiveBorder;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Tahoma", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.Location = new Point(406, 26);
-            button1.Name = "button1";
-            button1.Size = new Size(100, 40);
-            button1.TabIndex = 3;
-            button1.Text = "Thêm";
-            button1.UseVisualStyleBackColor = false;
+            btnAdd.BackColor = SystemColors.ButtonHighlight;
+            btnAdd.FlatAppearance.BorderColor = SystemColors.ActiveBorder;
+            btnAdd.FlatStyle = FlatStyle.Flat;
+            btnAdd.Font = new Font("Tahoma", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnAdd.Location = new Point(406, 26);
+            btnAdd.Name = "btnAdd";
+            btnAdd.Size = new Size(100, 40);
+            btnAdd.TabIndex = 3;
+            btnAdd.Text = "Thêm";
+            btnAdd.UseVisualStyleBackColor = false;
+            btnAdd.Click += btnAdd_Click;
             // 
-            // button2
+            // btnFind
             // 
-            button2.BackColor = SystemColors.ButtonHighlight;
-            button2.FlatAppearance.BorderColor = Color.Blue;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Tahoma", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button2.Location = new Point(406, 86);
-            button2.Name = "button2";
-            button2.Size = new Size(100, 40);
-            button2.TabIndex = 4;
-            button2.Text = "Tìm món ăn";
-            button2.UseVisualStyleBackColor = false;
+            btnFind.BackColor = SystemColors.ButtonHighlight;
+            btnFind.FlatAppearance.BorderColor = Color.Blue;
+            btnFind.FlatStyle = FlatStyle.Flat;
+            btnFind.Font = new Font("Tahoma", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnFind.Location = new Point(406, 86);
+            btnFind.Name = "btnFind";
+            btnFind.Size = new Size(100, 40);
+            btnFind.TabIndex = 4;
+            btnFind.Text = "Tìm món ăn";
+            btnFind.UseVisualStyleBackColor = false;
+            btnFind.Click += btnFind_Click;
             // 
-            // button3
+            // btnDel
             // 
-            button3.BackColor = SystemColors.ButtonHighlight;
-            button3.FlatAppearance.BorderColor = SystemColors.ActiveBorder;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Tahoma", 9F);
-            button3.Location = new Point(406, 132);
-            button3.Name = "button3";
-            button3.Size = new Size(100, 40);
-            button3.TabIndex = 5;
-            button3.Text = "Xóa";
-            button3.UseVisualStyleBackColor = false;
+            btnDel.BackColor = SystemColors.ButtonHighlight;
+            btnDel.FlatAppearance.BorderColor = SystemColors.ActiveBorder;
+            btnDel.FlatStyle = FlatStyle.Flat;
+            btnDel.Font = new Font("Tahoma", 9F);
+            btnDel.Location = new Point(406, 132);
+            btnDel.Name = "btnDel";
+            btnDel.Size = new Size(100, 40);
+            btnDel.TabIndex = 5;
+            btnDel.Text = "Xóa";
+            btnDel.UseVisualStyleBackColor = false;
+            btnDel.Click += btnDel_Click;
             // 
-            // button4
+            // btnExit
             // 
-            button4.BackColor = SystemColors.ButtonHighlight;
-            button4.FlatAppearance.BorderColor = SystemColors.ActiveBorder;
-            button4.FlatStyle = FlatStyle.Flat;
-            button4.Font = new Font("Tahoma", 9F);
-            button4.Location = new Point(406, 178);
-            button4.Name = "button4";
-            button4.Size = new Size(100, 40);
-            button4.TabIndex = 6;
-            button4.Text = "Thoát";
-            button4.UseVisualStyleBackColor = false;
+            btnExit.BackColor = SystemColors.ButtonHighlight;
+            btnExit.FlatAppearance.BorderColor = SystemColors.ActiveBorder;
+            btnExit.FlatStyle = FlatStyle.Flat;
+            btnExit.Font = new Font("Tahoma", 9F);
+            btnExit.Location = new Point(406, 178);
+            btnExit.Name = "btnExit";
+            btnExit.Size = new Size(100, 40);
+            btnExit.TabIndex = 6;
+            btnExit.Text = "Thoát";
+            btnExit.UseVisualStyleBackColor = false;
+            btnExit.Click += btnExit_Click;
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(lblOuput);
             groupBox1.Font = new Font("Tahoma", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             groupBox1.Location = new Point(28, 355);
             groupBox1.Name = "groupBox1";
@@ -127,6 +126,13 @@
             groupBox1.TabIndex = 7;
             groupBox1.TabStop = false;
             groupBox1.Text = "Kết quả";
+            // 
+            // lblOuput
+            // 
+            lblOuput.Location = new Point(18, 33);
+            lblOuput.Name = "lblOuput";
+            lblOuput.Size = new Size(323, 46);
+            lblOuput.TabIndex = 0;
             // 
             // label4
             // 
@@ -139,38 +145,47 @@
             label4.TabIndex = 8;
             label4.Text = "NT106.Q14";
             // 
+            // lstDishes
+            // 
+            lstDishes.FormattingEnabled = true;
+            lstDishes.Location = new Point(28, 86);
+            lstDishes.Name = "lstDishes";
+            lstDishes.Size = new Size(361, 264);
+            lstDishes.TabIndex = 9;
+            // 
             // WhatToEatTodayForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(536, 460);
+            Controls.Add(lstDishes);
             Controls.Add(label4);
             Controls.Add(groupBox1);
-            Controls.Add(button4);
-            Controls.Add(button3);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(btnExit);
+            Controls.Add(btnDel);
+            Controls.Add(btnFind);
+            Controls.Add(btnAdd);
             Controls.Add(label1);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(txtInput);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "WhatToEatTodayForm";
             Text = "Hôm nay ăn gì?";
             Load += WhatToEatTodayForm_Load;
+            groupBox1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private TextBox txtInput;
         private Label label1;
-        private Button button1;
-        private Button button2;
-        private Button button3;
-        private Button button4;
+        private Button btnAdd;
+        private Button btnFind;
+        private Button btnDel;
+        private Button btnExit;
         private GroupBox groupBox1;
         private Label label4;
+        private Label lblOuput;
+        private ListBox lstDishes;
     }
 }

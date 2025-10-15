@@ -31,19 +31,21 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ArrayProcessingForm));
             groupBox1 = new GroupBox();
             label2 = new Label();
-            textBox1 = new TextBox();
+            txtArray = new TextBox();
             label1 = new Label();
             groupBox2 = new GroupBox();
-            button1 = new Button();
-            button4 = new Button();
-            button5 = new Button();
+            lblOutput = new Label();
+            btnPrint = new Button();
+            btnExit = new Button();
+            btnDel = new Button();
             groupBox1.SuspendLayout();
+            groupBox2.SuspendLayout();
             SuspendLayout();
             // 
             // groupBox1
             // 
             groupBox1.Controls.Add(label2);
-            groupBox1.Controls.Add(textBox1);
+            groupBox1.Controls.Add(txtArray);
             groupBox1.Controls.Add(label1);
             groupBox1.Font = new Font("Tahoma", 9F);
             groupBox1.Location = new Point(26, 23);
@@ -64,12 +66,13 @@
             label2.Text = "Theo định dạng (Họ và tên, Điểm môn 1,\r\nĐiểm môn 2,...) cách nhau bởi dấu phẩy. \r\nVí dụ: Nguyễn Thị A, 7.5, 5, 8, 10, 9,10, 8.5\r\n";
             label2.Click += label2_Click;
             // 
-            // textBox1
+            // txtArray
             // 
-            textBox1.Location = new Point(212, 33);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(229, 26);
-            textBox1.TabIndex = 2;
+            txtArray.Location = new Point(212, 33);
+            txtArray.Name = "txtArray";
+            txtArray.Size = new Size(229, 26);
+            txtArray.TabIndex = 2;
+            txtArray.TextChanged += txtArray_TextChanged;
             // 
             // label1
             // 
@@ -82,6 +85,7 @@
             // 
             // groupBox2
             // 
+            groupBox2.Controls.Add(lblOutput);
             groupBox2.Font = new Font("Tahoma", 9F);
             groupBox2.Location = new Point(26, 173);
             groupBox2.Name = "groupBox2";
@@ -89,55 +93,68 @@
             groupBox2.TabIndex = 1;
             groupBox2.TabStop = false;
             groupBox2.Text = "Thông tin sinh viên";
+            groupBox2.Enter += groupBox2_Enter;
             // 
-            // button1
+            // lblOutput
             // 
-            button1.BackColor = SystemColors.ButtonHighlight;
-            button1.FlatAppearance.BorderColor = Color.Blue;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Tahoma", 9F);
-            button1.Location = new Point(515, 34);
-            button1.Name = "button1";
-            button1.Size = new Size(99, 36);
-            button1.TabIndex = 2;
-            button1.Text = "In thông tin";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            lblOutput.Dock = DockStyle.Fill;
+            lblOutput.Location = new Point(3, 22);
+            lblOutput.Name = "lblOutput";
+            lblOutput.Padding = new Padding(10);
+            lblOutput.Size = new Size(459, 303);
+            lblOutput.TabIndex = 0;
+            lblOutput.Text = "Thông tin sẽ hiển thị tại đây...";
             // 
-            // button4
+            // btnPrint
             // 
-            button4.BackColor = SystemColors.ButtonHighlight;
-            button4.FlatAppearance.BorderColor = SystemColors.ActiveBorder;
-            button4.FlatStyle = FlatStyle.Flat;
-            button4.Font = new Font("Tahoma", 9F);
-            button4.Location = new Point(515, 121);
-            button4.Name = "button4";
-            button4.Size = new Size(99, 36);
-            button4.TabIndex = 5;
-            button4.Text = "Thoát";
-            button4.UseVisualStyleBackColor = false;
+            btnPrint.BackColor = SystemColors.ButtonHighlight;
+            btnPrint.FlatAppearance.BorderColor = Color.Blue;
+            btnPrint.FlatStyle = FlatStyle.Flat;
+            btnPrint.Font = new Font("Tahoma", 9F);
+            btnPrint.Location = new Point(515, 34);
+            btnPrint.Name = "btnPrint";
+            btnPrint.Size = new Size(99, 36);
+            btnPrint.TabIndex = 2;
+            btnPrint.Text = "In thông tin";
+            btnPrint.UseVisualStyleBackColor = false;
+            btnPrint.Click += btnPrint_Click;
             // 
-            // button5
+            // btnExit
             // 
-            button5.BackColor = SystemColors.ButtonHighlight;
-            button5.FlatAppearance.BorderColor = SystemColors.ActiveBorder;
-            button5.FlatStyle = FlatStyle.Flat;
-            button5.Font = new Font("Tahoma", 9F);
-            button5.Location = new Point(515, 78);
-            button5.Name = "button5";
-            button5.Size = new Size(99, 36);
-            button5.TabIndex = 6;
-            button5.Text = "Xóa";
-            button5.UseVisualStyleBackColor = false;
+            btnExit.BackColor = SystemColors.ButtonHighlight;
+            btnExit.FlatAppearance.BorderColor = SystemColors.ActiveBorder;
+            btnExit.FlatStyle = FlatStyle.Flat;
+            btnExit.Font = new Font("Tahoma", 9F);
+            btnExit.Location = new Point(515, 121);
+            btnExit.Name = "btnExit";
+            btnExit.Size = new Size(99, 36);
+            btnExit.TabIndex = 5;
+            btnExit.Text = "Thoát";
+            btnExit.UseVisualStyleBackColor = false;
+            btnExit.Click += btnExit_Click;
+            // 
+            // btnDel
+            // 
+            btnDel.BackColor = SystemColors.ButtonHighlight;
+            btnDel.FlatAppearance.BorderColor = SystemColors.ActiveBorder;
+            btnDel.FlatStyle = FlatStyle.Flat;
+            btnDel.Font = new Font("Tahoma", 9F);
+            btnDel.Location = new Point(515, 78);
+            btnDel.Name = "btnDel";
+            btnDel.Size = new Size(99, 36);
+            btnDel.TabIndex = 6;
+            btnDel.Text = "Xóa";
+            btnDel.UseVisualStyleBackColor = false;
+            btnDel.Click += btnDel_Click;
             // 
             // ArrayProcessingForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(642, 518);
-            Controls.Add(button5);
-            Controls.Add(button4);
-            Controls.Add(button1);
+            Controls.Add(btnDel);
+            Controls.Add(btnExit);
+            Controls.Add(btnPrint);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Icon = (Icon)resources.GetObject("$this.Icon");
@@ -145,18 +162,20 @@
             Text = "Quản lí điểm sinh viên";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            groupBox2.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
 
         private GroupBox groupBox1;
-        private TextBox textBox1;
+        private TextBox txtArray;
         private Label label1;
         private GroupBox groupBox2;
         private Label label2;
-        private Button button1;
-        private Button button4;
-        private Button button5;
+        private Button btnPrint;
+        private Button btnExit;
+        private Button btnDel;
+        private Label lblOutput;
     }
 }

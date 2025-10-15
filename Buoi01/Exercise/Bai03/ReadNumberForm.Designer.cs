@@ -31,11 +31,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReadNumberForm));
             btnRead = new Button();
             groupBox2 = new GroupBox();
+            lblOutput = new Label();
             groupBox1 = new GroupBox();
             txtNumber = new TextBox();
             label1 = new Label();
-            button1 = new Button();
+            btnExit = new Button();
             label6 = new Label();
+            groupBox2.SuspendLayout();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -51,9 +53,11 @@
             btnRead.TabIndex = 7;
             btnRead.Text = "Đọc";
             btnRead.UseVisualStyleBackColor = false;
+            btnRead.Click += btnRead_Click;
             // 
             // groupBox2
             // 
+            groupBox2.Controls.Add(lblOutput);
             groupBox2.Font = new Font("Tahoma", 9F);
             groupBox2.Location = new Point(24, 98);
             groupBox2.Name = "groupBox2";
@@ -62,6 +66,13 @@
             groupBox2.TabStop = false;
             groupBox2.Text = "Kết quả:";
             groupBox2.Enter += groupBox2_Enter;
+            // 
+            // lblOutput
+            // 
+            lblOutput.Location = new Point(72, 22);
+            lblOutput.Name = "lblOutput";
+            lblOutput.Size = new Size(309, 25);
+            lblOutput.TabIndex = 0;
             // 
             // groupBox1
             // 
@@ -92,18 +103,19 @@
             label1.Text = "Nhập số nguyên từ 0 đến 9:";
             label1.Click += label1_Click;
             // 
-            // button1
+            // btnExit
             // 
-            button1.BackColor = SystemColors.ButtonHighlight;
-            button1.FlatAppearance.BorderColor = SystemColors.ActiveBorder;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Tahoma", 9F);
-            button1.Location = new Point(457, 68);
-            button1.Name = "button1";
-            button1.Size = new Size(99, 36);
-            button1.TabIndex = 8;
-            button1.Text = "Thoát";
-            button1.UseVisualStyleBackColor = false;
+            btnExit.BackColor = SystemColors.ButtonHighlight;
+            btnExit.FlatAppearance.BorderColor = SystemColors.ActiveBorder;
+            btnExit.FlatStyle = FlatStyle.Flat;
+            btnExit.Font = new Font("Tahoma", 9F);
+            btnExit.Location = new Point(457, 68);
+            btnExit.Name = "btnExit";
+            btnExit.Size = new Size(99, 36);
+            btnExit.TabIndex = 8;
+            btnExit.Text = "Thoát";
+            btnExit.UseVisualStyleBackColor = false;
+            btnExit.Click += btnExit_Click;
             // 
             // label6
             // 
@@ -122,7 +134,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(582, 175);
             Controls.Add(label6);
-            Controls.Add(button1);
+            Controls.Add(btnExit);
             Controls.Add(btnRead);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
@@ -130,6 +142,7 @@
             Name = "ReadNumberForm";
             Text = "Đọc số";
             Load += ReadNumberForm_Load;
+            groupBox2.ResumeLayout(false);
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ResumeLayout(false);
@@ -142,7 +155,8 @@
         private GroupBox groupBox1;
         private TextBox txtNumber;
         private Label label1;
-        private Button button1;
+        private Button btnExit;
         private Label label6;
+        private Label lblOutput;
     }
 }

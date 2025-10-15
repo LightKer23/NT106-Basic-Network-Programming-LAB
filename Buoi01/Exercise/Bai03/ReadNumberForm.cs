@@ -36,5 +36,62 @@ namespace Exercise.Bai03
         {
 
         }
+
+        private void btnRead_Click(object sender, EventArgs e)
+        {
+            string number = txtNumber.Text;
+            if (string.IsNullOrEmpty(number))
+            {
+                MessageBox.Show("Vui lòng điền số để đọc!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (number.Length > 1)
+            {
+                MessageBox.Show("Vui lòng nhập số từ 0 đến 9!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            switch (Convert.ToInt32(number))
+            {
+                case 0:
+                    lblOutput.Text = "Không";
+                    break;
+                case 1:
+                    lblOutput.Text = "Một";
+                    break;
+                case 2:
+                    lblOutput.Text = "Hai";
+                    break;
+                case 3:
+                    lblOutput.Text = "Ba";
+                    break;
+                case 4:
+                    lblOutput.Text = "Bốn";
+                    break;
+                case 5:
+                    lblOutput.Text = "Năm";
+                    break;
+                case 6:
+                    lblOutput.Text = "Sáu";
+                    break;
+                case 7:
+                    lblOutput.Text = "Bảy";
+                    break;
+                case 8:
+                    lblOutput.Text = "Tám";
+                    break;
+                default:
+                    lblOutput.Text = "Chín";
+                    break;
+            }
+
+
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

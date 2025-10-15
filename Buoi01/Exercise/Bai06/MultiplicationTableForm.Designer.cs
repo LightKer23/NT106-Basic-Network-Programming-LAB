@@ -30,21 +30,23 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MultiplicationTableForm));
             groupBox1 = new GroupBox();
-            listCalculate = new ListBox();
+            cboCalculate = new ComboBox();
             label3 = new Label();
             txtNumberB = new TextBox();
             txtNumberA = new TextBox();
             label2 = new Label();
             label1 = new Label();
             groupBox2 = new GroupBox();
-            button1 = new Button();
-            button4 = new Button();
+            rtbResult = new RichTextBox();
+            btnCalculate = new Button();
+            btnExit = new Button();
             groupBox1.SuspendLayout();
+            groupBox2.SuspendLayout();
             SuspendLayout();
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(listCalculate);
+            groupBox1.Controls.Add(cboCalculate);
             groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(txtNumberB);
             groupBox1.Controls.Add(txtNumberA);
@@ -58,15 +60,13 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Nhập";
             // 
-            // listCalculate
+            // cboCalculate
             // 
-            listCalculate.FormattingEnabled = true;
-            listCalculate.ItemHeight = 18;
-            listCalculate.Items.AddRange(new object[] { "Bảng cửu chương", "Tính toán giá trị" });
-            listCalculate.Location = new Point(94, 99);
-            listCalculate.Name = "listCalculate";
-            listCalculate.Size = new Size(227, 22);
-            listCalculate.TabIndex = 1;
+            cboCalculate.FormattingEnabled = true;
+            cboCalculate.Location = new Point(94, 95);
+            cboCalculate.Name = "cboCalculate";
+            cboCalculate.Size = new Size(227, 26);
+            cboCalculate.TabIndex = 5;
             // 
             // label3
             // 
@@ -113,6 +113,7 @@
             // 
             // groupBox2
             // 
+            groupBox2.Controls.Add(rtbResult);
             groupBox2.Font = new Font("Tahoma", 9F);
             groupBox2.Location = new Point(24, 193);
             groupBox2.Name = "groupBox2";
@@ -122,40 +123,54 @@
             groupBox2.Text = "Kết quả";
             groupBox2.Enter += groupBox2_Enter;
             // 
-            // button1
+            // rtbResult
             // 
-            button1.BackColor = SystemColors.ButtonHighlight;
-            button1.FlatAppearance.BorderColor = Color.Blue;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Tahoma", 9F);
-            button1.Location = new Point(411, 42);
-            button1.Name = "button1";
-            button1.Size = new Size(134, 46);
-            button1.TabIndex = 2;
-            button1.Text = "Tính toán giá trị";
-            button1.UseVisualStyleBackColor = false;
+            rtbResult.BackColor = SystemColors.ButtonHighlight;
+            rtbResult.BorderStyle = BorderStyle.FixedSingle;
+            rtbResult.Location = new Point(10, 25);
+            rtbResult.Name = "rtbResult";
+            rtbResult.ReadOnly = true;
+            rtbResult.ScrollBars = RichTextBoxScrollBars.Vertical;
+            rtbResult.Size = new Size(501, 240);
+            rtbResult.TabIndex = 0;
+            rtbResult.Text = "";
+            rtbResult.Click += btnCalculate_Click;
             // 
-            // button4
+            // btnCalculate
             // 
-            button4.BackColor = SystemColors.ButtonHighlight;
-            button4.FlatAppearance.BorderColor = SystemColors.ActiveBorder;
-            button4.FlatStyle = FlatStyle.Flat;
-            button4.Font = new Font("Tahoma", 9F);
-            button4.Location = new Point(411, 104);
-            button4.Name = "button4";
-            button4.Size = new Size(134, 46);
-            button4.TabIndex = 5;
-            button4.Text = "Thoát";
-            button4.UseVisualStyleBackColor = false;
-            button4.Click += button4_Click;
+            btnCalculate.BackColor = SystemColors.ButtonHighlight;
+            btnCalculate.FlatAppearance.BorderColor = Color.Blue;
+            btnCalculate.FlatStyle = FlatStyle.Flat;
+            btnCalculate.Font = new Font("Tahoma", 9F);
+            btnCalculate.Location = new Point(411, 42);
+            btnCalculate.Name = "btnCalculate";
+            btnCalculate.Size = new Size(134, 46);
+            btnCalculate.TabIndex = 2;
+            btnCalculate.Text = "Tính toán giá trị";
+            btnCalculate.UseVisualStyleBackColor = false;
+            btnCalculate.Click += btnCalculate_Click;
+            // 
+            // btnExit
+            // 
+            btnExit.BackColor = SystemColors.ButtonHighlight;
+            btnExit.FlatAppearance.BorderColor = SystemColors.ActiveBorder;
+            btnExit.FlatStyle = FlatStyle.Flat;
+            btnExit.Font = new Font("Tahoma", 9F);
+            btnExit.Location = new Point(411, 104);
+            btnExit.Name = "btnExit";
+            btnExit.Size = new Size(134, 46);
+            btnExit.TabIndex = 5;
+            btnExit.Text = "Thoát";
+            btnExit.UseVisualStyleBackColor = false;
+            btnExit.Click += btnExit_Click;
             // 
             // MultiplicationTableForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(568, 495);
-            Controls.Add(button4);
-            Controls.Add(button1);
+            Controls.Add(btnExit);
+            Controls.Add(btnCalculate);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Icon = (Icon)resources.GetObject("$this.Icon");
@@ -163,6 +178,7 @@
             Text = "Tính toán giá trị và bảng cửu chương";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            groupBox2.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -173,10 +189,11 @@
         private Label label1;
         private TextBox txtNumberB;
         private TextBox txtNumberA;
-        private ListBox listCalculate;
         private Label label3;
         private GroupBox groupBox2;
-        private Button button1;
-        private Button button4;
+        private Button btnCalculate;
+        private Button btnExit;
+        private ComboBox cboCalculate;
+        private RichTextBox rtbResult;
     }
 }

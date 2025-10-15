@@ -30,18 +30,20 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ZodiacForm));
             groupBox1 = new GroupBox();
-            textBox1 = new TextBox();
+            txtInput = new TextBox();
             label1 = new Label();
             groupBox2 = new GroupBox();
-            button1 = new Button();
-            button2 = new Button();
+            btnFind = new Button();
+            btnExit = new Button();
             label4 = new Label();
+            lblOutput = new Label();
             groupBox1.SuspendLayout();
+            groupBox2.SuspendLayout();
             SuspendLayout();
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(textBox1);
+            groupBox1.Controls.Add(txtInput);
             groupBox1.Controls.Add(label1);
             groupBox1.Font = new Font("Tahoma", 9F);
             groupBox1.Location = new Point(27, 20);
@@ -51,12 +53,12 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Nhập";
             // 
-            // textBox1
+            // txtInput
             // 
-            textBox1.Location = new Point(217, 25);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(197, 26);
-            textBox1.TabIndex = 2;
+            txtInput.Location = new Point(217, 25);
+            txtInput.Name = "txtInput";
+            txtInput.Size = new Size(197, 26);
+            txtInput.TabIndex = 2;
             // 
             // label1
             // 
@@ -70,6 +72,7 @@
             // 
             // groupBox2
             // 
+            groupBox2.Controls.Add(lblOutput);
             groupBox2.Font = new Font("Tahoma", 9F);
             groupBox2.Location = new Point(27, 115);
             groupBox2.Name = "groupBox2";
@@ -78,32 +81,33 @@
             groupBox2.TabStop = false;
             groupBox2.Text = "Kết quả";
             // 
-            // button1
+            // btnFind
             // 
-            button1.BackColor = SystemColors.ButtonHighlight;
-            button1.FlatAppearance.BorderColor = Color.Blue;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Tahoma", 9F);
-            button1.Location = new Point(487, 30);
-            button1.Name = "button1";
-            button1.Size = new Size(99, 36);
-            button1.TabIndex = 2;
-            button1.Text = "Tìm";
-            button1.UseVisualStyleBackColor = false;
+            btnFind.BackColor = SystemColors.ButtonHighlight;
+            btnFind.FlatAppearance.BorderColor = Color.Blue;
+            btnFind.FlatStyle = FlatStyle.Flat;
+            btnFind.Font = new Font("Tahoma", 9F);
+            btnFind.Location = new Point(487, 30);
+            btnFind.Name = "btnFind";
+            btnFind.Size = new Size(99, 36);
+            btnFind.TabIndex = 2;
+            btnFind.Text = "Tìm";
+            btnFind.UseVisualStyleBackColor = false;
+            btnFind.Click += btnFind_Click;
             // 
-            // button2
+            // btnExit
             // 
-            button2.BackColor = SystemColors.ButtonHighlight;
-            button2.FlatAppearance.BorderColor = SystemColors.ActiveBorder;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Tahoma", 9F);
-            button2.Location = new Point(487, 72);
-            button2.Name = "button2";
-            button2.Size = new Size(99, 36);
-            button2.TabIndex = 3;
-            button2.Text = "Thoát";
-            button2.UseVisualStyleBackColor = false;
-            button2.Click += button2_Click;
+            btnExit.BackColor = SystemColors.ButtonHighlight;
+            btnExit.FlatAppearance.BorderColor = SystemColors.ActiveBorder;
+            btnExit.FlatStyle = FlatStyle.Flat;
+            btnExit.Font = new Font("Tahoma", 9F);
+            btnExit.Location = new Point(487, 72);
+            btnExit.Name = "btnExit";
+            btnExit.Size = new Size(99, 36);
+            btnExit.TabIndex = 3;
+            btnExit.Text = "Thoát";
+            btnExit.UseVisualStyleBackColor = false;
+            btnExit.Click += btnExit_Click;
             // 
             // label4
             // 
@@ -116,14 +120,21 @@
             label4.TabIndex = 6;
             label4.Text = "NT106.Q14";
             // 
+            // lblOutput
+            // 
+            lblOutput.Location = new Point(21, 25);
+            lblOutput.Name = "lblOutput";
+            lblOutput.Size = new Size(393, 43);
+            lblOutput.TabIndex = 0;
+            // 
             // ZodiacForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(619, 222);
             Controls.Add(label4);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(btnExit);
+            Controls.Add(btnFind);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Icon = (Icon)resources.GetObject("$this.Icon");
@@ -131,6 +142,7 @@
             Text = "Cung hoàng đạo";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            groupBox2.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -138,11 +150,12 @@
         #endregion
 
         private GroupBox groupBox1;
-        private TextBox textBox1;
+        private TextBox txtInput;
         private Label label1;
         private GroupBox groupBox2;
-        private Button button1;
-        private Button button2;
+        private Button btnFind;
+        private Button btnExit;
         private Label label4;
+        private Label lblOutput;
     }
 }
