@@ -46,7 +46,7 @@ namespace Exercise.Bai03
                 return;
             }
 
-            if (number.Length > 1)
+            if (number.Length > 1 || number[0] < '0' || number[0] > '9')
             {
                 MessageBox.Show("Vui lòng nhập số từ 0 đến 9!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
