@@ -39,7 +39,7 @@ namespace Exercise.Bai03
 
         private void btnRead_Click(object sender, EventArgs e)
         {
-            string number = txtNumber.Text;
+            string number = txtNumber.Text.Trim();
             if (string.IsNullOrEmpty(number))
             {
                 MessageBox.Show("Vui lòng điền số để đọc!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);

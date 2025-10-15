@@ -33,6 +33,12 @@ namespace Exercise.Bai07
             string input = txtInput.Text.Trim();
             DateTime birthDate;
 
+            if (string.IsNullOrEmpty(input)) 
+            {
+                MessageBox.Show("Vui lòng điền ngày tháng năm sinh để xem cung hoàng đạo!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             if (!DateTime.TryParseExact(input, "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out birthDate))
             {
                 MessageBox.Show("Vui lòng nhập đúng định dạng: dd/MM/yyyy", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);

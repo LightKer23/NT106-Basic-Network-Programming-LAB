@@ -31,6 +31,13 @@ namespace Exercise.Bai04
         {
             string input = txtNumber.Text.Trim();
 
+            if (string.IsNullOrEmpty(input))
+            {
+                MessageBox.Show("Vui lòng nhập số để tiến hành đọc!",
+                                "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             if (!long.TryParse(input, out long number) || input.Length > 12)
             {
                 MessageBox.Show("Vui lòng nhập số nguyên hợp lệ (không quá 12 chữ số).",
