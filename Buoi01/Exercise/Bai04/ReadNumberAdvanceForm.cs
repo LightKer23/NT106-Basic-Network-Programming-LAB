@@ -44,7 +44,7 @@ namespace Exercise.Bai04
                 return;
             }
 
-            rtbOutput.Text = ReadNumber(number);
+            rtbOutput.Text = number > 0 ? ReadNumber(number) : "Âm " + ReadNumber(Math.Abs(number));
         }
 
         private string ReadNumber(long number)
