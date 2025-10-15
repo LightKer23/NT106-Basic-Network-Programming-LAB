@@ -41,7 +41,7 @@ namespace Exercise.Bai01
 
             if (!int.TryParse(txtNumber1.Text.Trim(), out int number01))
             {
-                MessageBox.Show($"Giá trị số nguyên nằm trong khoảng {int.MinValue} đến {int.MaxValue}. Vui lòng nhập lại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Vui lòng nhập số nguyên!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtNumber1.Clear();
             }
         }
