@@ -16,5 +16,10 @@ namespace Exercise.Bai02
         {
             InitializeComponent();
         }
+
+        private void txtBoxURL_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
