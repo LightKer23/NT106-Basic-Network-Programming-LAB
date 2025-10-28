@@ -16,5 +16,10 @@ namespace Exercise.Bai04
         {
             InitializeComponent();
         }
+
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
