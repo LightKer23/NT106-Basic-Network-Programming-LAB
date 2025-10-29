@@ -157,6 +157,7 @@
             Controls.Add(btnBai01);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Dashboard";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Dashboard";
             Load += Dashboard_Load;
             ResumeLayout(false);

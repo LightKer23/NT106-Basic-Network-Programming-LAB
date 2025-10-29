@@ -57,7 +57,7 @@
             label4 = new Label();
             label5 = new Label();
             label6 = new Label();
-            richTextBox1 = new RichTextBox();
+            rtBoxShowTxt = new RichTextBox();
             btnWriteFileInput = new Button();
             btnReadFileInput = new Button();
             btnAdd = new Button();
@@ -353,13 +353,13 @@
             label6.TabIndex = 1;
             label6.Text = "Họ và tên:";
             // 
-            // richTextBox1
+            // rtBoxShowTxt
             // 
-            richTextBox1.Location = new Point(417, 33);
-            richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new Size(350, 371);
-            richTextBox1.TabIndex = 3;
-            richTextBox1.Text = "";
+            rtBoxShowTxt.Location = new Point(417, 33);
+            rtBoxShowTxt.Name = "rtBoxShowTxt";
+            rtBoxShowTxt.Size = new Size(350, 371);
+            rtBoxShowTxt.TabIndex = 3;
+            rtBoxShowTxt.Text = "";
             // 
             // btnWriteFileInput
             // 
@@ -373,6 +373,7 @@
             btnWriteFileInput.TabIndex = 4;
             btnWriteFileInput.Text = "Ghi vào File \"input4.txt\"";
             btnWriteFileInput.UseVisualStyleBackColor = false;
+            btnWriteFileInput.Click += btnWriteFileInput_Click;
             // 
             // btnReadFileInput
             // 
@@ -385,6 +386,7 @@
             btnReadFileInput.TabIndex = 5;
             btnReadFileInput.Text = "Đọc File \"input4.txt\"";
             btnReadFileInput.UseVisualStyleBackColor = false;
+            btnReadFileInput.Click += btnReadFileInput_Click;
             // 
             // btnAdd
             // 
@@ -397,6 +399,7 @@
             btnAdd.TabIndex = 6;
             btnAdd.Text = "Thêm";
             btnAdd.UseVisualStyleBackColor = false;
+            btnAdd.Click += btnAdd_Click;
             // 
             // lblPage
             // 
@@ -436,6 +439,7 @@
             btnPrev.Text = "<Trước đó";
             btnPrev.TextAlign = ContentAlignment.MiddleLeft;
             btnPrev.UseVisualStyleBackColor = false;
+            btnPrev.Click += btnPrev_Click;
             // 
             // lblNotes
             // 
@@ -457,6 +461,7 @@
             btnCalculate.TabIndex = 11;
             btnCalculate.Text = "Tính điểm TB";
             btnCalculate.UseVisualStyleBackColor = false;
+            btnCalculate.Click += btnCalculate_Click;
             // 
             // btnWriteFileOutput
             // 
@@ -469,6 +474,7 @@
             btnWriteFileOutput.TabIndex = 12;
             btnWriteFileOutput.Text = "Ghi vào File \"output4.txt\"";
             btnWriteFileOutput.UseVisualStyleBackColor = false;
+            btnWriteFileOutput.Click += btnWriteFileOutput_Click;
             // 
             // StudentManagementForm
             // 
@@ -484,11 +490,12 @@
             Controls.Add(btnAdd);
             Controls.Add(btnReadFileInput);
             Controls.Add(btnWriteFileInput);
-            Controls.Add(richTextBox1);
+            Controls.Add(rtBoxShowTxt);
             Controls.Add(grpBoxOutput);
             Controls.Add(grpBoxInput);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "StudentManagementForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Quản lí sinh viên";
             grpBoxInput.ResumeLayout(false);
             grpBoxInput.PerformLayout();
@@ -527,7 +534,7 @@
         private Label label6;
         private TextBox txtBoxPrintAverage;
         private Label label7;
-        private RichTextBox richTextBox1;
+        private RichTextBox rtBoxShowTxt;
         private Button btnWriteFileInput;
         private Button btnReadFileInput;
         private Button btnAdd;

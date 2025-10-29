@@ -45,6 +45,7 @@
             btnReadFile.TabIndex = 0;
             btnReadFile.Text = "Đọc File";
             btnReadFile.UseVisualStyleBackColor = false;
+            btnReadFile.Click += btnReadFile_Click;
             // 
             // btnWriteFile
             // 
@@ -57,6 +58,7 @@
             btnWriteFile.TabIndex = 1;
             btnWriteFile.Text = "Ghi File";
             btnWriteFile.UseVisualStyleBackColor = false;
+            btnWriteFile.Click += btnWriteFile_Click;
             // 
             // rtBoxOutput
             // 
@@ -76,6 +78,7 @@
             Controls.Add(btnReadFile);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "ReadAndWriteFileForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Đọc và ghi File";
             ResumeLayout(false);
         }

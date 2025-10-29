@@ -30,18 +30,18 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReadFiletxtForm));
             grpBoxInput = new GroupBox();
-            lblFileName = new Label();
-            lblChar = new Label();
-            lblWord = new Label();
-            lblLine = new Label();
-            lblURL = new Label();
-            lblSize = new Label();
-            txtBoxFIleName = new TextBox();
             txtBoxChar = new TextBox();
             txtBoxWord = new TextBox();
             txtBoxLine = new TextBox();
             txtBoxURL = new TextBox();
             txtBoxSize = new TextBox();
+            txtBoxFIleName = new TextBox();
+            lblSize = new Label();
+            lblURL = new Label();
+            lblLine = new Label();
+            lblWord = new Label();
+            lblChar = new Label();
+            lblFileName = new Label();
             btnReadFile = new Button();
             btnClose = new Button();
             rtBoxOutput = new RichTextBox();
@@ -70,50 +70,59 @@
             grpBoxInput.TabStop = false;
             grpBoxInput.Text = "Nhập";
             // 
-            // lblFileName
+            // txtBoxChar
             // 
-            lblFileName.Font = new Font("Tahoma", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblFileName.Location = new Point(20, 30);
-            lblFileName.Name = "lblFileName";
-            lblFileName.Size = new Size(81, 23);
-            lblFileName.TabIndex = 1;
-            lblFileName.Text = "Tên File:";
+            txtBoxChar.BackColor = SystemColors.ControlLight;
+            txtBoxChar.Location = new Point(160, 205);
+            txtBoxChar.Name = "txtBoxChar";
+            txtBoxChar.ReadOnly = true;
+            txtBoxChar.Size = new Size(221, 28);
+            txtBoxChar.TabIndex = 3;
             // 
-            // lblChar
+            // txtBoxWord
             // 
-            lblChar.Font = new Font("Tahoma", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblChar.Location = new Point(20, 205);
-            lblChar.Name = "lblChar";
-            lblChar.Size = new Size(81, 23);
-            lblChar.TabIndex = 2;
-            lblChar.Text = "Số kí tự:";
+            txtBoxWord.BackColor = SystemColors.ControlLight;
+            txtBoxWord.Location = new Point(160, 170);
+            txtBoxWord.Name = "txtBoxWord";
+            txtBoxWord.ReadOnly = true;
+            txtBoxWord.Size = new Size(221, 28);
+            txtBoxWord.TabIndex = 4;
             // 
-            // lblWord
+            // txtBoxLine
             // 
-            lblWord.Font = new Font("Tahoma", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblWord.Location = new Point(20, 170);
-            lblWord.Name = "lblWord";
-            lblWord.Size = new Size(81, 23);
-            lblWord.TabIndex = 3;
-            lblWord.Text = "Số từ:";
+            txtBoxLine.BackColor = SystemColors.ControlLight;
+            txtBoxLine.Location = new Point(160, 135);
+            txtBoxLine.Name = "txtBoxLine";
+            txtBoxLine.ReadOnly = true;
+            txtBoxLine.Size = new Size(221, 28);
+            txtBoxLine.TabIndex = 5;
             // 
-            // lblLine
+            // txtBoxURL
             // 
-            lblLine.Font = new Font("Tahoma", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblLine.Location = new Point(20, 135);
-            lblLine.Name = "lblLine";
-            lblLine.Size = new Size(81, 23);
-            lblLine.TabIndex = 4;
-            lblLine.Text = "Số dòng:";
+            txtBoxURL.BackColor = SystemColors.ControlLight;
+            txtBoxURL.Location = new Point(160, 100);
+            txtBoxURL.Name = "txtBoxURL";
+            txtBoxURL.ReadOnly = true;
+            txtBoxURL.Size = new Size(221, 28);
+            txtBoxURL.TabIndex = 6;
             // 
-            // lblURL
+            // txtBoxSize
             // 
-            lblURL.Font = new Font("Tahoma", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblURL.Location = new Point(20, 100);
-            lblURL.Name = "lblURL";
-            lblURL.Size = new Size(81, 23);
-            lblURL.TabIndex = 5;
-            lblURL.Text = "URL:";
+            txtBoxSize.BackColor = SystemColors.ControlLight;
+            txtBoxSize.Location = new Point(160, 65);
+            txtBoxSize.Name = "txtBoxSize";
+            txtBoxSize.ReadOnly = true;
+            txtBoxSize.Size = new Size(220, 28);
+            txtBoxSize.TabIndex = 7;
+            // 
+            // txtBoxFIleName
+            // 
+            txtBoxFIleName.BackColor = SystemColors.ControlLight;
+            txtBoxFIleName.Location = new Point(160, 30);
+            txtBoxFIleName.Name = "txtBoxFIleName";
+            txtBoxFIleName.ReadOnly = true;
+            txtBoxFIleName.Size = new Size(220, 28);
+            txtBoxFIleName.TabIndex = 2;
             // 
             // lblSize
             // 
@@ -124,48 +133,50 @@
             lblSize.TabIndex = 6;
             lblSize.Text = "Kích thước:";
             // 
-            // txtBoxFIleName
+            // lblURL
             // 
-            txtBoxFIleName.Location = new Point(160, 30);
-            txtBoxFIleName.Name = "txtBoxFIleName";
-            txtBoxFIleName.Size = new Size(220, 28);
-            txtBoxFIleName.TabIndex = 2;
+            lblURL.Font = new Font("Tahoma", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblURL.Location = new Point(20, 100);
+            lblURL.Name = "lblURL";
+            lblURL.Size = new Size(81, 23);
+            lblURL.TabIndex = 5;
+            lblURL.Text = "URL:";
             // 
-            // txtBoxChar
+            // lblLine
             // 
-            txtBoxChar.Location = new Point(160, 205);
-            txtBoxChar.Name = "txtBoxChar";
-            txtBoxChar.Size = new Size(221, 28);
-            txtBoxChar.TabIndex = 3;
+            lblLine.Font = new Font("Tahoma", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblLine.Location = new Point(20, 135);
+            lblLine.Name = "lblLine";
+            lblLine.Size = new Size(81, 23);
+            lblLine.TabIndex = 4;
+            lblLine.Text = "Số dòng:";
             // 
-            // txtBoxWord
+            // lblWord
             // 
-            txtBoxWord.Location = new Point(160, 170);
-            txtBoxWord.Name = "txtBoxWord";
-            txtBoxWord.Size = new Size(221, 28);
-            txtBoxWord.TabIndex = 4;
+            lblWord.Font = new Font("Tahoma", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblWord.Location = new Point(20, 170);
+            lblWord.Name = "lblWord";
+            lblWord.Size = new Size(81, 23);
+            lblWord.TabIndex = 3;
+            lblWord.Text = "Số từ:";
             // 
-            // txtBoxLine
+            // lblChar
             // 
-            txtBoxLine.Location = new Point(160, 135);
-            txtBoxLine.Name = "txtBoxLine";
-            txtBoxLine.Size = new Size(221, 28);
-            txtBoxLine.TabIndex = 5;
+            lblChar.Font = new Font("Tahoma", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblChar.Location = new Point(20, 205);
+            lblChar.Name = "lblChar";
+            lblChar.Size = new Size(81, 23);
+            lblChar.TabIndex = 2;
+            lblChar.Text = "Số kí tự:";
             // 
-            // txtBoxURL
+            // lblFileName
             // 
-            txtBoxURL.Location = new Point(160, 100);
-            txtBoxURL.Name = "txtBoxURL";
-            txtBoxURL.Size = new Size(221, 28);
-            txtBoxURL.TabIndex = 6;
-            txtBoxURL.TextChanged += txtBoxURL_TextChanged;
-            // 
-            // txtBoxSize
-            // 
-            txtBoxSize.Location = new Point(160, 65);
-            txtBoxSize.Name = "txtBoxSize";
-            txtBoxSize.Size = new Size(220, 28);
-            txtBoxSize.TabIndex = 7;
+            lblFileName.Font = new Font("Tahoma", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblFileName.Location = new Point(20, 30);
+            lblFileName.Name = "lblFileName";
+            lblFileName.Size = new Size(81, 23);
+            lblFileName.TabIndex = 1;
+            lblFileName.Text = "Tên File:";
             // 
             // btnReadFile
             // 
@@ -179,6 +190,7 @@
             btnReadFile.TabIndex = 2;
             btnReadFile.Text = "Đọc File";
             btnReadFile.UseVisualStyleBackColor = false;
+            btnReadFile.Click += btnReadFile_Click;
             // 
             // btnClose
             // 
@@ -191,6 +203,7 @@
             btnClose.TabIndex = 3;
             btnClose.Text = "Thoát";
             btnClose.UseVisualStyleBackColor = false;
+            btnClose.Click += btnClose_Click;
             // 
             // rtBoxOutput
             // 
@@ -211,6 +224,7 @@
             Controls.Add(grpBoxInput);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "ReadFiletxtForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Đọc thông tin File .txt";
             grpBoxInput.ResumeLayout(false);
             grpBoxInput.PerformLayout();

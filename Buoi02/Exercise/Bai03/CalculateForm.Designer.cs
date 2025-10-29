@@ -46,6 +46,7 @@
             btnReadFile.TabIndex = 0;
             btnReadFile.Text = "Đọc File";
             btnReadFile.UseVisualStyleBackColor = false;
+            btnReadFile.Click += btnReadFile_Click;
             // 
             // btnCalculate
             // 
@@ -58,6 +59,7 @@
             btnCalculate.TabIndex = 1;
             btnCalculate.Text = "Tính toán";
             btnCalculate.UseVisualStyleBackColor = false;
+            btnCalculate.Click += btnCalculate_Click;
             // 
             // btnWriteFile
             // 
@@ -70,6 +72,7 @@
             btnWriteFile.TabIndex = 2;
             btnWriteFile.Text = "Ghi File";
             btnWriteFile.UseVisualStyleBackColor = false;
+            btnWriteFile.Click += btnWriteFile_Click;
             // 
             // rtBoxOutput
             // 
@@ -90,6 +93,7 @@
             Controls.Add(btnReadFile);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "CalculateForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Tính toán";
             ResumeLayout(false);
         }

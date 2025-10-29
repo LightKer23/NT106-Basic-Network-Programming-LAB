@@ -17,6 +17,28 @@ namespace Exercise.Bai01
             InitializeComponent();
         }
 
-        
+        private void btnReadFile_Click(object sender, EventArgs e)
+        {
+            if (!File.Exists("input1.txt"))
+            {
+                MessageBox.Show("File input1.txt không tồn tại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            string content = File.ReadAllText("input1.txt");
+            rtBoxOutput.Text = content;
+        }
+
+        private void btnWriteFile_Click(object sender, EventArgs e)
+        {
+            if(string.IsNullOrWhiteSpace(rtBoxOutput.Text))
+            {
+                MessageBox.Show("Không có nội dung để ghi vào file!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            File.WriteAllText("output1.txt", rtBoxOutput.Text.ToUpper());
+            MessageBox.Show("Đã ghi nội dung vào file output1.txt", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 }
