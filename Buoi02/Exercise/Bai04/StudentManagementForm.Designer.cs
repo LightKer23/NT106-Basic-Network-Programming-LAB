@@ -86,7 +86,7 @@
             grpBoxInput.Controls.Add(lblScore3);
             grpBoxInput.Controls.Add(lblFullName);
             grpBoxInput.Font = new Font("Tahoma", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            grpBoxInput.Location = new Point(25, 22);
+            grpBoxInput.Location = new Point(25, 17);
             grpBoxInput.Name = "grpBoxInput";
             grpBoxInput.Size = new Size(353, 210);
             grpBoxInput.TabIndex = 1;
@@ -213,7 +213,7 @@
             grpBoxOutput.Controls.Add(label5);
             grpBoxOutput.Controls.Add(label6);
             grpBoxOutput.Font = new Font("Tahoma", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            grpBoxOutput.Location = new Point(25, 336);
+            grpBoxOutput.Location = new Point(25, 282);
             grpBoxOutput.Name = "grpBoxOutput";
             grpBoxOutput.Size = new Size(353, 249);
             grpBoxOutput.TabIndex = 2;
@@ -355,7 +355,7 @@
             // 
             // rtBoxShowTxt
             // 
-            rtBoxShowTxt.Location = new Point(417, 33);
+            rtBoxShowTxt.Location = new Point(417, 30);
             rtBoxShowTxt.Name = "rtBoxShowTxt";
             rtBoxShowTxt.Size = new Size(350, 371);
             rtBoxShowTxt.TabIndex = 3;
@@ -404,7 +404,7 @@
             // lblPage
             // 
             lblPage.Font = new Font("Tahoma", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblPage.Location = new Point(188, 597);
+            lblPage.Location = new Point(189, 555);
             lblPage.Name = "lblPage";
             lblPage.Size = new Size(32, 24);
             lblPage.TabIndex = 7;
@@ -417,7 +417,7 @@
             btnNext.FlatAppearance.BorderColor = Color.Black;
             btnNext.FlatStyle = FlatStyle.Flat;
             btnNext.Font = new Font("Tahoma", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnNext.Location = new Point(287, 591);
+            btnNext.Location = new Point(288, 555);
             btnNext.Name = "btnNext";
             btnNext.Size = new Size(91, 30);
             btnNext.TabIndex = 8;
@@ -432,7 +432,7 @@
             btnPrev.FlatAppearance.BorderColor = Color.Black;
             btnPrev.FlatStyle = FlatStyle.Flat;
             btnPrev.Font = new Font("Tahoma", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnPrev.Location = new Point(25, 591);
+            btnPrev.Location = new Point(26, 555);
             btnPrev.Name = "btnPrev";
             btnPrev.Size = new Size(90, 30);
             btnPrev.TabIndex = 9;
@@ -480,7 +480,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(793, 641);
+            ClientSize = new Size(793, 602);
             Controls.Add(btnWriteFileOutput);
             Controls.Add(btnCalculate);
             Controls.Add(lblNotes);

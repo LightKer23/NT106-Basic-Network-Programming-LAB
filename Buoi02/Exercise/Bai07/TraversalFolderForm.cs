@@ -38,7 +38,7 @@ namespace Exercise.Bai07
         {
             try
             {
-                var allowedExtensions = new[] { ".txt", ".jpg", ".jpeg", ".png", ".gif", ".bmp" };
+                var allowedExtensions = new[] { ".jpg", ".jpeg", ".png"};
 
                 foreach (var file in Directory.GetFiles(path)
                     .Where(f => allowedExtensions.Contains(Path.GetExtension(f).ToLower())))

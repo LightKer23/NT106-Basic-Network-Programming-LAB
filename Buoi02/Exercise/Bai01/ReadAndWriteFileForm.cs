@@ -25,8 +25,7 @@ namespace Exercise.Bai01
                 return;
             }
 
-            string content = File.ReadAllText("input1.txt");
-            rtBoxOutput.Text = content;
+            rtBoxOutput.Text = File.ReadAllText("input1.txt");
         }
 
         private void btnWriteFile_Click(object sender, EventArgs e)

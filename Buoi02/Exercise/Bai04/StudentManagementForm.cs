@@ -30,9 +30,15 @@ namespace Exercise.Bai04
                 return false;
             }
 
-            if (!int.TryParse(txtID.Text, out int id))
+            if (string.IsNullOrEmpty(txtID.Text))
             {
-                errorMessage = "MSSV phải là số nguyên!";
+                errorMessage = "Vui lòng nhập MSSV!";
+                return false;
+            }
+
+            if (!int.TryParse(txtID.Text, out int id) || txtID.Text.Length != 8)
+            {
+                errorMessage = "MSSV phải là số nguyên và phải có 8 chữ số!";
                 return false;
             }
 
